@@ -1,11 +1,17 @@
+<div class="container">
 <h1>Places</h1>
 
+<div>
+<p>
+  <a href="/places/new">New place</a>
+</p>
+</div>
+<div>
 <ul>
   <% for place in @places %>
     <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
   <% end %>
 </ul>
+</div>
+</div>
 
-<p>
-  <a href="/places/new">New place</a>
-</p>

@@ -1,1 +1,8 @@
 /* Application styles */
+  .navbar-white {
+    color: #fff !important; 
+  }
+
+  .navbar-white:hover, .navbar-white:focus {
+    color: #f8f9fa !important; 
+  }

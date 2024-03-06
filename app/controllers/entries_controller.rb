@@ -12,6 +12,7 @@ class EntriesController < ApplicationController
     @entry["description"] = params["description"]
     @entry["occurred_on"] = params["occurred_on"]
     @entry["place_id"] = params["place_id"]
+    @entry.uploaded_image.attach(params["uploaded_image"])
     @entry["user_id"] = params["user_id"]
     @entry.save
   else

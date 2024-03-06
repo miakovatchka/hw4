@@ -7,13 +7,13 @@
 
 <div class="row">
 <% for entry in @entries %>
-<div class="col-xs-12 col-sm-6 col-md-4 mb-4"> 
- <div class="p-2">
-  <h2 class="fw-bold"><%= entry["title"] %></h2>
-  <h3 class="fs-6"><%= entry["occurred_on"] %></h3>
-  <img src="<%= entry["image"] %>" class="img-fluid" alt="Entry Image">
+<div class="col-md-4">
+  <h4><%= entry["title"] %></h4>
+  <p><%= entry["occurred_on"] %></p>
+  <p><% if entry.uploaded_image.attached? %>
+  <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid"></p>
+  <% end %>
   <p><%= entry["description"] %></p>
-  </div>
   </div>
 <% end %>
 </div>

@@ -3,36 +3,37 @@
 
 <% if @user != nil %>
 <div>
-<form action="/entries" method="post">
-<div>
-<p>
+<form action="/entries" method="post" enctype="multipart/form-data">
+<div class="row">
+<div class="col-md-3">
+<div class="mb-3">
   <input type="hidden" name="place_id" value="<%= params["place_id"] %>">
-    <label for="title_input">Title</label>
-    <input type="text" name="title" id="title_input">
-</p>
+    <label for="title_input" class="form-label">Title</label>
+    <input type="text" class="form-control" name="title" id="title_input">
 </div>
-<div>
-<p>
-    <label for="description_input">Description</label>
-    <input type="text" name="description" id="description_input">
-    </p>
+
+<div class="mb-3">
+    <label for="description_input" class="form-label">Description</label>
+    <input type="text" class="form-control" name="description" id="description_input">
     </div>
 
-    <div>
-    <p>
-    <label for="occurred_on_input">Occurred On</label>
-    <input type="date" name="occurred_on" id="occurred_on_input">
-    </p>
-    </div>
-
-    <div class="mb-3"
-    <p>
-    <label for="image_input" class="form-label">Image</label>
-    <input type="text" name="image" id="image_input">
+  <div class="mb-3">
+    <label for="occurred_on_input" class="form-label">Occurred On</label>
+    <input type="date" name="occurred_on" class="form-control" id="occurred_on_input">
+   </div>
     
+ <div class="mb-3">
+    <label for="uploaded_image_input" class="form-label">Upload Image</label>
+    <input type="file" name="uploaded_image" id="uploaded_image_input" class="form-control" >
     </div>
 
+<div class="row">
+<div class="col-md-3">
+<div class="mb-3">
   <button type="submit" class="btn btn-primary" href="/places/new">Save</button>
+  </div>
+  </div>
+
   </form>
   <% else %>
   You must first <a href="/login">login</a> to post.

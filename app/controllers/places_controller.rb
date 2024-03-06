@@ -2,12 +2,16 @@ class PlacesController < ApplicationController
 
   def index
     @places = Place.all
+    respond_to do|format|
+      format.html
+      format.json {render :json => @entries }
+    end
   end
 
   def show
    @user = User.find_by({"id" => params["user_id"]})
     @place = Place.find_by({ "id" => params["id"] })
-    @entries = Entry.where({ "place_id" => @place["id"] })
+    @entries = Entry.where({ "place_id" => @place["id"], "user_id" => session["id"] })
   end
 
   def new

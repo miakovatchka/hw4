@@ -2,10 +2,6 @@ class PlacesController < ApplicationController
 
   def index
     @places = Place.all
-    respond_to do|format|
-      format.html
-      format.json {render :json => @entries }
-    end
   end
 
   def show

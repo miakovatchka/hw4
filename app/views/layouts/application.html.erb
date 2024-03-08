@@ -26,6 +26,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <% @user = User.find_by({ "id" => session["user_id"] }) %>
@@ -33,19 +34,25 @@
           <li class="nav-item">
             <a class="nav-link navbar-white" href="/users/new">Sign Up </a>
           </li>
+
           <li class="nav-item">
             <span class="nav-link px-2" style="color: rgba(255,255,255,.55);">|</span>
           </li>
+
           <li class="nav-item">
             <a class="nav-link navbar-white" href="/login">Login</a>
           </li>
+
         <% else %>
+
           <li class="nav-item">
             <a class="nav-link" href="#">Logged in as: <%= @user["username"] %></a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="/logout">Logout</a>
           </li>
+          
         <% end %>
       </ul>
     </div>
